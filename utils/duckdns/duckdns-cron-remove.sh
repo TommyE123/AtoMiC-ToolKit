@@ -15,7 +15,7 @@ if crontab -l | grep -q "$CRONCMD" ; then
 else
     echo "Cron job not found"
 fi
-
+source "$SCRIPTPATH/utils/duckdns/duckdns-domain-remove.sh"
 source "$SCRIPTPATH/inc/app-file-del.sh"
 echo
 echo -e "${GREEN}---> $APPTITLE Removal complete.$ENDCOLOR"
