@@ -9,11 +9,11 @@ echo -e "$YELLOW--->Removing Duck DNS Cron Job...$ENDCOLOR"
 CRONCMD="$APPPATH/duck.sh #DuckDNS"
 
 if crontab -l | grep -q "$CRONCMD" ; then
-    if ( crontab -l | grep -v -F "$CRONCMD" ) | crontab - ; then
-        echo "Cron job Removed"
-    fi
-else
     echo "Cron job not found"
+else
+  if ( crontab -l | grep -v -F "$CRONCMD" ) | crontab - ; then
+      echo "Cron job Removed"
+  fi
 fi
 source "$SCRIPTPATH/utils/duckdns/duckdns-domain-remove.sh"
 source "$SCRIPTPATH/inc/app-file-del.sh"
