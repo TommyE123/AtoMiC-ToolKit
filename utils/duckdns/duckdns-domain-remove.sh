@@ -6,11 +6,11 @@ ATKCONFFILE='/etc/nginx/sites-available/AtoMiC-ToolKit-configured-sites'
 if [[ -f $ATKCONFFILE ]]; then
     # If it is does it have the duckdns domain in it?
     if grep -q "duckdns.org" "$ATKCONFFILE"; then
-        echo "$DOMAINNAME.duckdns.org not found in $ATKCONFFILE"
-    else
-        # Yes so remove it
+     # Yes so remove it
         if sed -i 's/ .*.duckdns.org/ /' "$ATKCONFFILE"; then
-            echo "$DOMAINNAME.duckdns.org removed from $ATKCONFFILE"
+            echo -e "${CYAN}duckdns.org domain(s)$ENDCOLOR removed from $CYAN$ATKCONFFILE$ENDCOLOR"
         fi
+    else
+        echo -e "No ${CYAN}.duckdns.org$ENDCOLOR domains found in $CYAN$ATKCONFFILE$ENDCOLOR"
     fi
 fi

@@ -11,15 +11,9 @@ echo -e "$YELLOW--->Creating Update Packages and Services Cron Job...$ENDCOLOR"
 CRONCMD="$SCRIPTPATH/maintenance/distro-services-update-cron.sh #AtoMiC-ToolKit"
 CRONJOB="0 0 * * * $CRONCMD"
 
-if crontab -l | grep -q "$CRONCMD" ; then
-    echo 'Cron job already exists'
-else
-    if ( crontab -l | grep -v -F "$CRONCMD" ; echo "$CRONJOB" ) | crontab - ; then
-        echo "Cron job created, This will pick up any future service installs as well."
-        echo "To easily adjust the time/frequency, install webmin and find it under the scheduled cron jobs menu option."
-    else
-        echo -e "${YELLOW}Failed to create Cron Job$ENDCOLOR"
-    fi
+source "$SCRIPTPATH/inc/crontab-handler.sh"
+if AddCronTab; then
+    source "$SCRIPTPATH/inc/thankyou.sh"
 fi
-source "$SCRIPTPATH/inc/thankyou.sh"
+
 source "$SCRIPTPATH/inc/exit.sh"

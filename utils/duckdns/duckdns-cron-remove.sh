@@ -6,15 +6,10 @@ echo "Are you sure you want to remove the DuckDNS update cron job?"
 source "$SCRIPTPATH/inc/pause.sh"
 
 echo -e "$YELLOW--->Removing Duck DNS Cron Job...$ENDCOLOR"
-CRONCMD="$APPPATH/duck.sh #DuckDNS"
 
-if crontab -l | grep -q "$CRONCMD" ; then
-    echo "Cron job not found"
-else
-  if ( crontab -l | grep -v -F "$CRONCMD" ) | crontab - ; then
-      echo "Cron job Removed"
-  fi
-fi
+source "$SCRIPTPATH/inc/crontab-handler.sh"
+RemoveCronTab
+
 source "$SCRIPTPATH/utils/duckdns/duckdns-domain-remove.sh"
 source "$SCRIPTPATH/inc/app-file-del.sh"
 echo
