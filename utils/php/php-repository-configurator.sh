@@ -1,16 +1,11 @@
 #!/bin/bash
-
 # Script Name: AtoMiC PHP Repo config Script
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
-
 
 CODENAME=$(lsb_release -c -s)
 
 case "$CODENAME" in
     'squeeze'|'wheezy')
-        echo "${RED}Distro not curently supported." \
+        echo -e "${RED}Distro not curently supported." \
             "Please consider upgrading to a newer version$ENDCOLOR"
         exit 1;;
     'jessie'|'stretch'|'sid')

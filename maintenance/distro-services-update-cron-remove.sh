@@ -1,5 +1,4 @@
 #!/bin/bash
-
 #Create the update Cron Job
 echo -e "${GREEN}AtoMiC Cron Job Removed Script$ENDCOLOR"
 echo
