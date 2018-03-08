@@ -1,7 +1,7 @@
 #!/bin/bash
 echo -e "${GREEN}AtoMiC Duck DNS Cron Job Installer Script$ENDCOLOR"
 
-echo 
+echo
 
 CRONCMD="$APPPATH/duck.sh #DuckDNS"
 if crontab -l | grep -q "$CRONCMD" ; then
