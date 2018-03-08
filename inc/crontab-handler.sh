@@ -13,7 +13,7 @@ AddCronTab()
                 echo -e "${YELLOW}Failed to create Cron Job$ENDCOLOR"
             fi
         fi
-    else   
+    else
         echo -e "${RED} CRONCMD and/or CRONJOB variable not set$ENDCOLOR"
     fi
 }
@@ -30,7 +30,7 @@ RemoveCronTab()
         else
             echo "Cron Job not found"
         fi
-    else   
+    else
         echo -e "${RED} CRONCMD variable not set$ENDCOLOR"
     fi
 }
