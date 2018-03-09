@@ -7,6 +7,7 @@ DOMAINNAME=$(whiptail --inputbox "What is your Duck DNS Sub Domain names without
 10 60 --title "Domain Name" 3>&1 1>&2 2>&3)
 exitstatus=$?
 
+DOMAINNAME="$(echo -e "${DOMAINNAME}" | sed 's/\(,\)*$//;s/^\(,\)*//;s/.duckdns.org//' | tr -d '[:space:]' | tr '[:upper:]' '[:lower:]')"
 if [[ -z $DOMAINNAME ]]; then
     echo -e "${RED}DOMAINNAME not specified. Aborting$ENDCOLOR"
 fi
