@@ -7,8 +7,7 @@ AddCronTab()
             echo 'Cron Job already exists'
         else
             if ( crontab -l | grep -v -F "$CRONCMD" ; echo "$CRONJOB" ) | crontab - ; then
-                echo "Cron Job created, This will pick up any future service installs as well."
-                echo "To easily adjust the time/frequency, install webmin and find it under the scheduled cron jobs menu option."
+                echo "Cron Job created, To easily adjust the time/frequency, install webmin and find it under the scheduled cron jobs menu option."
             else
                 echo -e "${YELLOW}Failed to create Cron Job$ENDCOLOR"
             fi
