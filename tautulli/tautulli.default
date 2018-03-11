@@ -5,4 +5,4 @@
 # the service to not start.
 
 #$RUN_AS, username to run Tautulli under, the default is Tautulli
-HP_USER=
+TAUTULLI_USER=

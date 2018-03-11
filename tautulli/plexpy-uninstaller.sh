@@ -14,14 +14,14 @@ if [[ -f "$APPSETTINGS" && -d /opt/Tautulli ]]; then
             { echo -e "${RED}Conf file not copied.$ENDCOLOR" ; exit 1; }; then
         echo -e "Copied over /opt/plexpy/config.ini to /opt/Tautulli/config.ini"
     fi
-fi
 
-if sed -i "s/plexpy/Tautulli/gI" /opt/Tautulli/config.ini; then
-    echo "Updated plexpy to Tautulli references in /opt/Tautulli/config.ini"
-fi
+    if sed -i "s/plexpy/Tautulli/gI" /opt/Tautulli/config.ini; then
+        echo "Updated plexpy to Tautulli references in /opt/Tautulli/config.ini"
+    fi
 
-if sed -i "s/Tautulli_auto_update/plexpy_auto_update/" /opt/Tautulli/config.ini; then
-    echo "Updated plexpy_auto_update in /opt/Tautulli/config.ini"
+    if sed -i "s/Tautulli_auto_update/plexpy_auto_update/" /opt/Tautulli/config.ini; then
+        echo "Updated plexpy_auto_update in /opt/Tautulli/config.ini"
+    fi
 fi
 
 if [[ -f "$APPSETTINGSDB" && -d /opt/Tautulli ]]; then
