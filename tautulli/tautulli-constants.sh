@@ -1,10 +1,10 @@
 #!/bin/bash
 
 APPNAME='tautulli'
-APPSHORTNAME='pp'
-APPPATH='/opt/tautulli'
+APPSHORTNAME='tt'
+APPPATH='/opt/Tautulli'
 APPTITLE='Tautulli'
-APPGIT='https://github.com/JonnyWong16/tautulli.git'
+APPGIT='https://github.com/Tautulli/Tautulli.git'
 APPDPORT='8182'
 APPSETTINGSTYPE='DB'
 APPSETTINGS=$APPPATH'/config.ini'
