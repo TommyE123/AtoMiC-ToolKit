@@ -12,6 +12,7 @@ SUBCHOICE=$(whiptail --title "AtoMiC Toolkit - Manage Tautulli" \
 "Enable Reverse Proxy" "Allow access" \
 "Disable Reverse Proxy" "Remove access" \
 "Access Details" "View Tautulli access details" \
+"Uninstall PlexPy" "Uninstall PlexPy" \
 "Go Back" "Back to Main Menu" 3>&1 1>&2 2>&3)
 
 exitstatus=$?
@@ -26,6 +27,10 @@ if [[ $exitstatus = 0 ]]; then
         "Enable Reverse Proxy" ) source "$SCRIPTPATH/utils/nginx/nginx-enable-location.sh" ;;
         "Disable Reverse Proxy" ) source "$SCRIPTPATH/utils/nginx/nginx-disable-location.sh" ;;
         "Access Details" ) source "$SCRIPTPATH/inc/app-access-details.sh" ;;
+        "Uninstall PlexPy" )
+            source "$SCRIPTPATH/$APPNAME/plexpy-uninstaller.sh"
+            source "$SCRIPTPATH/inc/thankyou.sh"
+            source "$SCRIPTPATH/inc/exit.sh" ;;
         "Go Back" )
             source "$SCRIPTPATH/menus/menu-personal-media-servers.sh" ;;
         *) source "$SCRIPTPATH/inc/invalid-option.sh" ;;
