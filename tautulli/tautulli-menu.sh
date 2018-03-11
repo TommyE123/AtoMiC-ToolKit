@@ -4,7 +4,7 @@
 SUBCHOICE=$(whiptail --title "AtoMiC Toolkit - Manage Tautulli" \
 --menu "What would you like to do?" --backtitle "$BACKTITLE" \
 --fb --cancel-button "Exit" $LINES $COLUMNS "$NETLINES" \
-"Install" "Install Tautulli" \
+"Install" "Install Tautulli (upgrades PlexPy if found)" \
 "Uninstall" "Uninstall Tautulli" \
 "Backup" "Backup Tautulli settings" \
 "Restore" "Restore Tautulli settings from a previous backup" \

@@ -10,14 +10,15 @@ source "$SCRIPTPATH/inc/app-move-previous.sh"
 source "$SCRIPTPATH/inc/pkgupdate.sh"
 source "$SCRIPTPATH/inc/app-git-download.sh"
 source "$SCRIPTPATH/inc/app-autostart-configure.sh"
+
 if [[ ! -f "$APPSETTINGS" ]]; then
-    sudo cp $SCRIPTPATH/tautulli/tautulli-config.ini $APPSETTINGS || { echo -e $RED'Conf file not copied.'$ENDCOLOR ; exit 1; }
+    sudo cp "$SCRIPTPATH/tautulli/tautulli-config.ini" "$APPSETTINGS" || \
+    { echo -e "${RED}Conf file not copied.$ENDCOLOR" ; exit 1; }
 fi
-source "$SCRIPTPATH/inc/app-set-permissions.sh"
 
 source "$SCRIPTPATH/tautulli/plexpy-uninstaller.sh"
 source "$SCRIPTPATH/tautulli/tautulli-constants.sh"
-
+source "$SCRIPTPATH/inc/app-set-permissions.sh"
 source "$SCRIPTPATH/inc/app-start.sh"
 source "$SCRIPTPATH/inc/app-install-confirmation.sh"
 source "$SCRIPTPATH/inc/thankyou.sh"
