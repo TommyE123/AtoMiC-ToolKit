@@ -1,10 +1,5 @@
 #!/bin/bash
-
-
 # Script Name: AtoMiC Batch Application Install Uninstall
-# Author: TommyE123
-# Publisher: http://www.htpcBeginner.com
-# License: MIT License (refer to README.md for more details)
 
 source "$SCRIPTPATH/setup.sh" -i muximux
 source "$SCRIPTPATH/setup.sh" -u muximux
@@ -62,15 +57,12 @@ source "$SCRIPTPATH/setup.sh" -u nzbget
 source "$SCRIPTPATH/setup.sh" -i nzbhydra
 # source "$SCRIPTPATH/setup.sh" -x nzbhydra
 source "$SCRIPTPATH/setup.sh" -u nzbhydra
-source "$SCRIPTPATH/setup.sh" -i ombi
+# source "$SCRIPTPATH/setup.sh" -i ombi
 # source "$SCRIPTPATH/setup.sh" -x ombi
-source "$SCRIPTPATH/setup.sh" -u ombi
+# source "$SCRIPTPATH/setup.sh" -u ombi
 source "$SCRIPTPATH/setup.sh" -i plexmediaserver
 source "$SCRIPTPATH/setup.sh" -x plexmediaserver
 source "$SCRIPTPATH/setup.sh" -u plexmediaserver
-source "$SCRIPTPATH/setup.sh" -i plexpy
-source "$SCRIPTPATH/setup.sh" -x plexpy
-source "$SCRIPTPATH/setup.sh" -u plexpy
 source "$SCRIPTPATH/setup.sh" -i pyload
 # source "$SCRIPTPATH/setup.sh" -x pyload
 source "$SCRIPTPATH/setup.sh" -u pyload
