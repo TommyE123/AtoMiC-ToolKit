@@ -22,7 +22,7 @@ else
         echo
         source "$APPPATH/duck.sh"
 
-        if [[ $(cat "$APPSETTINGSDIR/duck.log") == 'OK' ]]; then
+        if [[ $(cat "$APPPATH/duck.log") == 'OK' ]]; then
             echo -e "${GREEN}Successfully updated IP on Duck DNS$ENDCOLOR"
             echo
             LANIP=$(hostname -I | cut -d" " -f1)
