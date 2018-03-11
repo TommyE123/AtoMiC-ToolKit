@@ -1,12 +1,13 @@
 #!/bin/bash
 # Script Name: AtoMiC PlexPy Uninstaller
 echo
-echo -e "${YELLOW}--->Plexpy Uninstall and Backup...$ENDCOLOR"
+echo -e "${GREEN}--->Plexpy Upgrade and Removal...$ENDCOLOR"
 
 source "$SCRIPTPATH/inc/commons.sh"
 source "$SCRIPTPATH/inc/app-constant-reset.sh"
 source "$SCRIPTPATH/tautulli/plexpy-constants.sh"
 source "$SCRIPTPATH/inc/app-autostart-remove.sh"
+echo
 
 if [[ -f "$APPSETTINGS" && -d /opt/Tautulli ]]; then
     if sudo cp /opt/plexpy/config.ini /opt/Tautulli/config.ini || \
@@ -44,6 +45,6 @@ if [[ -f /etc/nginx/locations-available/plexpy.atomic.conf ]]; then
     fi
 fi
 
-# source "$SCRIPTPATH/inc/app-file-del.sh"
+source "$SCRIPTPATH/inc/app-file-del.sh"
 source "$SCRIPTPATH/inc/app-uninstall-confirmation.sh"
 source "$SCRIPTPATH/inc/app-constant-reset.sh"
