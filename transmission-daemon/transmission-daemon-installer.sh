@@ -37,7 +37,10 @@ source "$SCRIPTPATH/transmission-daemon/transmission-daemon-constants.sh"
 source "$SCRIPTPATH/inc/app-start.sh"
 sleep 2
 source "$SCRIPTPATH/$APPNAME/$APPNAME-settings-configurator.sh"
+
+# Command which reloads the settings file.
 kill -s SIGHUP "$(pidof transmission-daemon)" >/dev/null 2>&1
+
 source "$SCRIPTPATH/inc/app-install-confirmation.sh"
 source "$SCRIPTPATH/inc/thankyou.sh"
 source "$SCRIPTPATH/inc/exit.sh"
