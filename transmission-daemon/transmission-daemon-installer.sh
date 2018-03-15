@@ -16,7 +16,11 @@ source "$SCRIPTPATH/inc/app-install-deps.sh"
 source "$SCRIPTPATH/inc/app-folders-create.sh"
 
 # Just adds the override and updates it for systemd.
-source "$SCRIPTPATH/inc/app-autostart-configure.sh"
+if IsSystemdSupported; then
+    source "$SCRIPTPATH/inc/app-systemd-add.sh"
+    source "$SCRIPTPATH/$APPNAME/$APPNAME-systemd-update.sh"
+fi
+
 source "$SCRIPTPATH/inc/app-install.sh"
 
 if ! grep -qF 'net.core.rmem_max' /etc/sysctl.conf;then
