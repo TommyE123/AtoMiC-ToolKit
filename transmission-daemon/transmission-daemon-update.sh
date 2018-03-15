@@ -21,7 +21,7 @@ if DoesAppFolderExist; then
                 echo 'Inserted Type=simple into /etc/systemd/system/transmission-daemon.service.d/override.conf'
                 systemctl daemon-reload
             fi
-        fi 
+        fi
     fi
 
     source "$SCRIPTPATH/inc/app-start.sh"
