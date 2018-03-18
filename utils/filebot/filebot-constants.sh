@@ -2,5 +2,5 @@
 
 APPNAME='filebot'
 APPPATH=''
-APPDEPS='snap'
+APPDEPS='snapd'
 APPTITLE='FileBot'
