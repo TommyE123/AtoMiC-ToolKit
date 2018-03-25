@@ -6,7 +6,7 @@ SUBCHOICE=$(whiptail --title "AtoMiC Toolkit - Manage Other Tools" \
 --fb --cancel-button "Exit" $LINES $COLUMNS "$NETLINES" \
 "Certbot" "Automatically obtain certs from Let's Encrypt" \
 "DuckDNS" "Free service to point a DNS to an IP of your choice" \
-"FileBot" "TODO DESCRIPTION"
+"FileBot" "TV and Movie renamer / Subtitle downloader" \
 "FFmpeg" "Record, convert and stream audio and video" \
 "Java 8" "general-purpose computer programming language" \
 "Mono" "Open source implementation of MS .NET Framework" \

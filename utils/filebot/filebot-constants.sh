@@ -1,6 +1,6 @@
 #!/bin/bash
 
 APPNAME='filebot'
-APPPATH=''
+APPPATH="/snap/$APPNAME"
 APPDEPS='snapd'
 APPTITLE='FileBot'
