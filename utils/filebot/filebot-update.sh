@@ -12,6 +12,4 @@ if DoesAppFolderExist; then
     snap refresh "$APPNAME"
     source "$SCRIPTPATH/inc/app-update-confirmation.sh"
     source "$SCRIPTPATH/utils/filebot/filebot-patron.sh"
-    source "$SCRIPTPATH/inc/thankyou.sh"
-    source "$SCRIPTPATH/inc/exit.sh"
 fi

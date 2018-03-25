@@ -17,8 +17,6 @@ if IsSystemdSupported; then
         if snap install "$APPNAME"; then
             source "$SCRIPTPATH/inc/app-install-confirmation.sh"
             source "$SCRIPTPATH/utils/filebot/filebot-patron.sh"
-            source "$SCRIPTPATH/inc/thankyou.sh"
-            source "$SCRIPTPATH/inc/exit.sh"
         else
             echo -e "${RED}Linux Distro not currently supported.$ENDCOLOR"
         fi

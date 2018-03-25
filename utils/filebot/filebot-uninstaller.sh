@@ -9,9 +9,7 @@ if IsSystemdSupported; then
     echo -e "$YELLOW--->Uninstalling snap $APPTITLE package...$ENDCOLOR"
     snap remove "$APPNAME"
     source "$SCRIPTPATH/inc/app-uninstall-confirmation.sh"
-    source "$SCRIPTPATH/inc/thankyou.sh"
 else
     echo -e "${RED}Distro not curently supported." \
                 "Please consider upgrading to a newer version$ENDCOLOR"
 fi
-source "$SCRIPTPATH/inc/exit.sh"
