@@ -14,14 +14,16 @@ if IsSystemdSupported; then
         echo "$APPTITLE already installed"
         echo
     else
-        snap install "$APPNAME"
-        source "$SCRIPTPATH/inc/app-install-confirmation.sh"
+        if snap install "$APPNAME"; then
+            source "$SCRIPTPATH/inc/app-install-confirmation.sh"
+            source "$SCRIPTPATH/utils/filebot/filebot-patron.sh"
+            source "$SCRIPTPATH/inc/thankyou.sh"
+            source "$SCRIPTPATH/inc/exit.sh"
+        else
+            echo -e "${RED}Linux Distro not currently supported.$ENDCOLOR"
+        fi
     fi
-    source "$SCRIPTPATH/utils/filebot/filebot-patron.sh"
 else
-    echo -e "${RED}Distro not curently supported." \
+    echo -e "${RED}Linux Distro not currently supported." \
                 "Please consider upgrading to a newer version$ENDCOLOR"
 fi
-
-source "$SCRIPTPATH/inc/thankyou.sh"
-source "$SCRIPTPATH/inc/exit.sh"
