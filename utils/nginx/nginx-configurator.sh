@@ -23,20 +23,36 @@ if [[ ! -d /etc/nginx/locations-enabled ]]; then
     mkdir /etc/nginx/locations-enabled
 fi
 
+if [[ ! -d /etc/nginx/snippets ]]; then
+    mkdir /etc/nginx/snippets
+fi
+
 sudo chmod 755 -R /var/www
 sudo chown -R www-data:www-data /var/www
 echo "Set the correct folder permissions on /var/www for user www-data"
 
-########## AtoMiC-ToolKit-configured-sites ##########
+########## AtoMiC-ToolKit Snippets ##########
+# Copies any missing snippet files over but doesnt enable them.
+for f in $SCRIPTPATH/utils/nginx/snippets/*.conf; do
+    filename=$(basename $f)
+    if [[ ! -f /etc/nginx/snippets/$filename ]]; then
+        if cp $f "/etc/nginx/snippets/$filename" || \
+            { echo -e "${RED}Could not move snippet file $filename over.$ENDCOLOR"; exit 1; }; then
+            echo "Snippet file $filename copied over"
+        fi
+    fi
+done
+
+########## AtoMiC-ToolKit server.atomic.conf ##########
 if [[ ! -f "/etc/nginx/sites-available/$APPSETTINGS" ]] || ! grep -q "#\\ Version=2.0" "/etc/nginx/sites-available/$APPSETTINGS"; then
-    if  cp "$SCRIPTPATH/utils/nginx/$APPSETTINGS" \
+    if  cp "$SCRIPTPATH/utils/nginx/sites-available/$APPSETTINGS" \
         "/etc/nginx/sites-available/$APPSETTINGS" || \
         { echo -e "${RED}Could not move $APPSETTINGS file.$ENDCOLOR"; exit 1; }; then
-        echo "Copied AtoMiC-ToolKit-configured-sites file over"
+        echo "Copied $APPSETTINGS file over"
     fi
 
     if sudo sed -i "s@FPMVERSION@$FPMVERSION@g" \
-        "/etc/nginx/sites-available/$APPSETTINGS" || \
+        "/etc/nginx/snippets/php.atomic.conf" || \
         { echo -e "${RED}Modifying FPMVERSION in Nginx file failed.$ENDCOLOR"; exit 1; }; then
         echo -e "Updated config file with correct PHP Version $CYAN$FPMVERSION$ENDCOLOR"
     fi
@@ -54,7 +70,7 @@ if [[ ! -f "/etc/nginx/sites-available/$APPSETTINGS" ]] || ! grep -q "#\\ Versio
     fi
 fi
 
-# Symlink the AtoMiC-ToolKit-configured-sites to enable it.
+# Symlink the AtoMiC-ToolKit server.atomic.conf to enable it.
 if [[ ! -L "/etc/nginx/sites-enabled/$APPSETTINGS" ]]; then
     if sudo ln -s "/etc/nginx/sites-available/$APPSETTINGS" \
                 "/etc/nginx/sites-enabled/$APPSETTINGS"  || \
