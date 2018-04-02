@@ -10,14 +10,15 @@ if DoesAppFolderExist; then
     NEWPASS=$(whiptail --inputbox "Please enter a password or leave blank." \
     10 60 --title "Password Reset" 3>&1 1>&2 2>&3)
     exitstatus=$?
+    if [[ $exitstatus = 0 ]]; then
+        CURRRENTPASSSTRING=$(grep "$PASSSEARCH" "$APPSETTINGS")
 
-    CURRRENTPASSSTRING=${grep $PASSSEARCH $APPSETTINGS}
+        sed "s|*|$NEWPASS|" <<< "$PASSSEARCH"
 
-    sed "s|*|$NEWPASS|" <<< $PASSSEARCH
-
-    if sed -i "s|$CURRENTPASSSTRING|$PASSSEARCH|" $APPSETTINGS || \
-        { echo -e "${RED}Setting password failed.$ENDCOLOR" ; exit 1; }; then
-        echo -e "Password set to: $GREEN$NEWPASS$ENDCOLOR"
+        if sed -i "s|$CURRRENTPASSSTRING|$PASSSEARCH|" "$APPSETTINGS" || \
+            { echo -e "${RED}Setting password failed.$ENDCOLOR" ; exit 1; }; then
+            echo -e "Password set to: $GREEN$NEWPASS$ENDCOLOR"
+        fi
     fi
 fi
 
