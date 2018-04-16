@@ -34,6 +34,7 @@ Features features of AtoMiC ToolKit include:
 <li>User and newbie-friendly</li>
 <li>One-stop shop
 <ul>
+<li>Aria2 - Install, Uninstall, Update</li>
 <li>CouchPotato - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
 <li>Deluge - Install, Uninstall, Update and Backup / Restore</li>
 <li>Emby - Install, Uninstall, Update and Backup / Restore</li>
