@@ -26,9 +26,9 @@ source "$SCRIPTPATH/setup.sh" -u flood
 source "$SCRIPTPATH/setup.sh" -i emby-server
 # source "$SCRIPTPATH/setup.sh" -x emby-server
 source "$SCRIPTPATH/setup.sh" -u emby-server
-source "$SCRIPTPATH/setup.sh" -i glances
+# source "$SCRIPTPATH/setup.sh" -i glances # Fails to start
 # source "$SCRIPTPATH/setup.sh" -x glances
-source "$SCRIPTPATH/setup.sh" -u glances
+# source "$SCRIPTPATH/setup.sh" -u glances
 source "$SCRIPTPATH/setup.sh" -i headphones
 # source "$SCRIPTPATH/setup.sh" -x headphones
 source "$SCRIPTPATH/setup.sh" -u headphones
