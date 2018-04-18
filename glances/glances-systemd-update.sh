@@ -1,8 +1,8 @@
 #!/bin/bash
 # Script Name: AtoMiC Glances systemd update
 
-sudo sed -i "s@User=ReplaceMe@User=$UNAME@g" /etc/systemd/system/$APPSYSTEMD  || { echo -e $RED'Modifying USER in SYSTEMD file failed.'$ENDCOLOR; exit 1; }
-sudo sed -i "s@Group=ReplaceMe@Group=$UGROUP@g" /etc/systemd/system/$APPSYSTEMD  || { echo -e $RED'Modifying GROUP in SYSTEMD file failed.'$ENDCOLOR; exit 1; }
+ReplaceString "User=ReplaceMe" "User=$UNAME" "/etc/systemd/system/$APPSYSTEMD"
+ReplaceString "Group=ReplaceMe" "Group=$UGROUP" "/etc/systemd/system/$APPSYSTEMD"
 
 sudo systemctl daemon-reload
-sudo systemctl enable $APPSYSTEMD
+sudo systemctl enable "$APPSYSTEMD"
