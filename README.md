@@ -48,6 +48,7 @@ Features features of AtoMiC ToolKit include:
 <li>Lidarr - Install, Uninstall, Update and Backup / Restore</li>
 <li>Madsonic - Install, Uninstall, Update and Backup / Restore</li>
 <li>Medusa - Install, Uninstall, Update and Backup / Restore</li>
+<li>Monitorr - Install, Uninstall, Update</li>
 <li>Muximux - Install, Uninstall, Update</li>
 <li>Mylar - Install, Uninstall, Reset Password, Update and Backup / Restore</li>
 <li>NetData - Install, Uninstall, Update</li>

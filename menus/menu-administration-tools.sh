@@ -7,6 +7,7 @@ SUBCHOICE=$(whiptail --title "AtoMiC ToolKit - htpcBeginner.com" \
 "Glances" "Glances an Eye on your system. A top/htop alternative" \
 "Grafana" "Open platform for beautiful analytics and monitoring" \
 "HTPC Manager" "Unified HTPC Web Interface" \
+"Monitorr" "Webfront to live display status of any webapp or service" \
 "Muximux" "A lightweight way to manage your HTPC" \
 "NetData" "Real-time performance and health monitoring" \
 "Ombi" "Allow your users to Request Movies, TV Shows and Albums" \
@@ -25,6 +26,8 @@ if [[ $exitstatus = 0 ]]; then
             source "$SCRIPTPATH/grafana/grafana-menu.sh" ;;
         "HTPC Manager" )
             source "$SCRIPTPATH/htpcmanager/htpcmanager-menu.sh" ;;
+        "Monitorr" )
+            source "$SCRIPTPATH/monitorr/monitorr-menu.sh" ;;
         "Muximux" )
             source "$SCRIPTPATH/muximux/muximux-menu.sh" ;;
         "NetData" )

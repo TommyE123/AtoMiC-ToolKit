@@ -1,6 +1,8 @@
 #!/bin/bash
 # Script Name: AtoMiC Batch Application Install Uninstall
 
+source "$SCRIPTPATH/setup.sh" -i monitorr
+source "$SCRIPTPATH/setup.sh" -u monitorr
 source "$SCRIPTPATH/setup.sh" -i muximux
 source "$SCRIPTPATH/setup.sh" -u muximux
 source "$SCRIPTPATH/setup.sh" -i organizr

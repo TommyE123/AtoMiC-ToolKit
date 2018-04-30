@@ -16,6 +16,7 @@ source "$SCRIPTPATH/setup.sh" -i lazylibrarian
 source "$SCRIPTPATH/setup.sh" -i lidarr
 source "$SCRIPTPATH/setup.sh" -i madsonic
 source "$SCRIPTPATH/setup.sh" -i medusa
+source "$SCRIPTPATH/setup.sh" -i monitorr
 source "$SCRIPTPATH/setup.sh" -i muximux
 source "$SCRIPTPATH/setup.sh" -i mylar
 source "$SCRIPTPATH/setup.sh" -i netdata
