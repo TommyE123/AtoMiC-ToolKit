@@ -1,6 +1,7 @@
 #!/bin/bash
 # Script Name: AtoMiC Batch Test Application uninstaller
 
+source "$SCRIPTPATH/setup.sh" -u aria2
 source "$SCRIPTPATH/setup.sh" -u aria2-webui
 source "$SCRIPTPATH/setup.sh" -u couchpotato
 source "$SCRIPTPATH/setup.sh" -u deluged

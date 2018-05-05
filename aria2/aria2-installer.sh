@@ -2,6 +2,7 @@
 # Script Name: AtoMiC Aria2 Installer
 
 source "$SCRIPTPATH/inc/app-constant-reset.sh"
+source "$SCRIPTPATH/utils/python/python-installer.sh" 'python3'
 source "$SCRIPTPATH/aria2/aria2-constants.sh"
 echo -e "${GREEN}AtoMiC $APPTITLE Install Script$ENDCOLOR"
 source "$SCRIPTPATH/inc/app-autostart-remove.sh"
