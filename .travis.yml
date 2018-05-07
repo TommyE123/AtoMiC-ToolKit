@@ -11,7 +11,8 @@ group:
     travis_latest
 
 before_install:
-    - sudo pip install bashate
+    - sudo -H pip install --upgrade pip
+    - sudo -H pip install --upgrade bashate
     - sudo apt-get install pcregrep
 
 script:
